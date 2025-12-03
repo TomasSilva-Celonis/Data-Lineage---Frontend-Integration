@@ -1540,6 +1540,8 @@ c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,node_name,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_pool_id,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_pool_name,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_model_id,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_model_name,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_schema_id,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_schema_name,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,category,USED
@@ -1551,8 +1553,9 @@ c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,usedtables_report_frontend,column_name,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,usedtables_report_frontend,USED_NOT_USED,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,usedtables_report_frontend,_CELONIS_CHANGE_DATE,NOT_USED
-c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,4ef2ec4b-aa72-4896-b53c-3d678c9683b5,test_tomas,test_table_1_to_10,ID,USED
-c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,4ef2ec4b-aa72-4896-b53c-3d678c9683b5,test_tomas,test_table_1_to_10,Letter,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,13483c35-4b6a-4e90-b06c-9230b25e7b02,dummy_peopleDM,people_NewTable,name,NOT_USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,13483c35-4b6a-4e90-b06c-9230b25e7b02,dummy_peopleDM,people_NewTable,age,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,13483c35-4b6a-4e90-b06c-9230b25e7b02,dummy_peopleDM,people_NewTable,country,USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_lineage,source_node,NOT_USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_lineage,target_node,NOT_USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_lineage,task_target,USED
@@ -1560,6 +1563,8 @@ c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,4ef2ec4b-aa72-4896-
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,node_name,USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_pool_id,USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_pool_name,USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_model_id,NOT_USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_model_name,NOT_USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_schema_id,USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,data_schema_name,USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,full_mapping_nodes,category,USED
@@ -1571,5 +1576,7 @@ c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,4ef2ec4b-aa72-4896-
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,usedtables_report_frontend,column_name,NOT_USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,usedtables_report_frontend,USED_NOT_USED,NOT_USED
 21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,bbcfb903-9134-433a-9c91-08fb75ad3d3f,full_lineage,usedtables_report_frontend,_CELONIS_CHANGE_DATE,NOT_USED
-21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,951165b9-1905-4c81-ad3b-4f5f94099f39,test_tomas,tabletomas,ID,USED
-21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,951165b9-1905-4c81-ad3b-4f5f94099f39,test_tomas,tabletomas,Letter,USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,1c366528-fd3e-479a-b304-63aa1c0db354,tomas_datamodel,tabletomas,ID,USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,1c366528-fd3e-479a-b304-63aa1c0db354,tomas_datamodel,tabletomas,Letter,USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,1c366528-fd3e-479a-b304-63aa1c0db354,tomas_datamodel,tabletomas2,ID,USED
+21a3ed98-f1f1-452d-9735-e58b34bac57e,lineage_tomas,1c366528-fd3e-479a-b304-63aa1c0db354,tomas_datamodel,tabletomas2,Letter,USED
