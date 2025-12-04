@@ -1544,6 +1544,8 @@ c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_model_name,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_schema_id,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,data_schema_name,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,knowledge_model_id,USED
+c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,knowledge_model_key,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,full_mapping_nodes,category,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,usedtables_report_frontend,d_pool_id,USED
 c840c791-823a-4d34-9571-f39dae182078,Sarvesh Monitoring Pool,088283c6-9918-4b59-9a4b-96d9cb38bb15,full lineage,usedtables_report_frontend,d_pool_name,USED
