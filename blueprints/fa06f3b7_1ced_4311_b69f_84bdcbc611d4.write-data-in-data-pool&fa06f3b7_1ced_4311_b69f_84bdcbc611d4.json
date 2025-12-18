@@ -1,0 +1,908 @@
+{
+    "flow": [
+        {
+            "id": 2,
+            "mapper": {
+                "file": "1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA",
+                "select": "map",
+                "formatDrawings": "image/jpeg",
+                "formatDocuments": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "formatSpreadsheets": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "formatPresentations": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+            },
+            "module": "google-drive:getAFile",
+            "version": 4,
+            "metadata": {
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Enter a File ID",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "map",
+                                "value"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "formatDocuments",
+                        "type": "select",
+                        "label": "Convert Google Documents Files to Format",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                                "application/pdf",
+                                "application/vnd.oasis.opendocument.text",
+                                "text/html",
+                                "text/plain",
+                                "application/rtf",
+                                "text/markdown"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "formatSpreadsheets",
+                        "type": "select",
+                        "label": "Convert Google Spreadsheets Files to Format",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                "application/x-vnd.oasis.opendocument.spreadsheet",
+                                "application/pdf",
+                                "text/csv"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "formatPresentations",
+                        "type": "select",
+                        "label": "Convert Google Slides Files to Format",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                                "application/pdf"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "formatDrawings",
+                        "type": "select",
+                        "label": "Convert Google Drawings Files to Format",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "image/jpeg",
+                                "image/png",
+                                "image/svg+xml",
+                                "application/pdf"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "type": "text",
+                        "label": "File ID",
+                        "required": true
+                    }
+                ],
+                "restore": {
+                    "expect": {
+                        "select": {
+                            "label": "Enter manually"
+                        },
+                        "formatDrawings": {
+                            "label": "JPEG"
+                        },
+                        "formatDocuments": {
+                            "label": "MS Word Document"
+                        },
+                        "formatSpreadsheets": {
+                            "label": "MS Excel"
+                        },
+                        "formatPresentations": {
+                            "label": "MS PowerPoint"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google-restricted"
+                            },
+                            "label": "My Google Restricted connection (t.depaivaesilva@celonis.de)"
+                        }
+                    }
+                },
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:google-restricted",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ]
+            },
+            "parameters": {
+                "__IMTCONN__": 7483
+            }
+        },
+        {
+            "id": 1,
+            "mapper": {
+                "quote": "\"",
+                "escape": "\\",
+                "csvData": "{{2.data}}",
+                "delimiter": "other",
+                "tableName": "af_test",
+                "dateFormat": "yyyy-MM-dd",
+                "chooseSource": "csvInput",
+                "connectionName": "af_test",
+                "dateTimeFormat": "yyyy-MM-dd HH:mm:ss",
+                "includeHeaders": true,
+                "dataPoolMapping": "generateDynamically",
+                "dataPoolSelected": "21a3ed98-f1f1-452d-9735-e58b34bac57e",
+                "delimiterCharacter": ";",
+                "ingestionConnection": " New Connection"
+            },
+            "module": "celonis:writeToDataPool",
+            "version": 3,
+            "metadata": {
+                "expect": [
+                    {
+                        "name": "dataPoolMapping",
+                        "type": "select",
+                        "label": "Enter Data Pool",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "generateStatic",
+                                "generateDynamically"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "dataPoolSelected",
+                        "type": "select",
+                        "label": "Data Pool",
+                        "required": true
+                    },
+                    {
+                        "name": "ingestionConnection",
+                        "type": "select",
+                        "label": "Data connection",
+                        "required": true
+                    },
+                    {
+                        "name": "connectionName",
+                        "type": "text",
+                        "label": "New connection name",
+                        "required": true
+                    },
+                    {
+                        "name": "tableName",
+                        "type": "text",
+                        "label": "New table name",
+                        "required": true
+                    },
+                    {
+                        "name": "chooseSource",
+                        "type": "select",
+                        "label": "Data source",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "manualInput",
+                                "csvInput",
+                                "automaticCsvInput"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "csvData",
+                        "type": "text",
+                        "label": "CSV",
+                        "required": true
+                    },
+                    {
+                        "name": "delimiter",
+                        "type": "select",
+                        "label": "Delimiter",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                ",",
+                                "\t",
+                                "other"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "includeHeaders",
+                        "type": "boolean",
+                        "label": "Does your CSV contain headers in the first row?",
+                        "required": true
+                    },
+                    {
+                        "name": "quote",
+                        "type": "text",
+                        "label": "Quote sequence"
+                    },
+                    {
+                        "name": "escape",
+                        "type": "text",
+                        "label": "Escape sequence"
+                    },
+                    {
+                        "name": "dateFormat",
+                        "type": "text",
+                        "label": "Date format"
+                    },
+                    {
+                        "name": "dateTimeFormat",
+                        "type": "text",
+                        "label": "Date time format"
+                    },
+                    {
+                        "name": "newColumns",
+                        "spec": {
+                            "name": "value",
+                            "spec": [
+                                {
+                                    "name": "name",
+                                    "type": "text",
+                                    "label": "Column name",
+                                    "nested": [
+                                        "rpc://celonis/3/validateColumnNameWithoutExistingColumns"
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "defineAsPrimaryKey",
+                                    "type": "boolean",
+                                    "label": "Define as Primary Key",
+                                    "required": true
+                                },
+                                {
+                                    "name": "dataType",
+                                    "type": "select",
+                                    "label": "Type",
+                                    "options": [
+                                        {
+                                            "label": "String",
+                                            "value": "STRING",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Boolean",
+                                            "value": "BOOLEAN",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Number (decimal)",
+                                            "value": "DOUBLE",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Number (integer)",
+                                            "value": "LONG",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date & Time",
+                                            "value": "DATETIME",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Date",
+                                            "value": "DATE",
+                                            "nested": [
+                                                {
+                                                    "name": "value",
+                                                    "type": "select",
+                                                    "label": "CSV Column",
+                                                    "options": [
+                                                        {
+                                                            "label": "Column 1",
+                                                            "value": "1"
+                                                        },
+                                                        {
+                                                            "label": "Column 2",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "label": "Column 3",
+                                                            "value": "3"
+                                                        },
+                                                        {
+                                                            "label": "Column 4",
+                                                            "value": "4"
+                                                        },
+                                                        {
+                                                            "label": "Column 5",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "label": "Column 6",
+                                                            "value": "6"
+                                                        },
+                                                        {
+                                                            "label": "Column 7",
+                                                            "value": "7"
+                                                        },
+                                                        {
+                                                            "label": "Column 8",
+                                                            "value": "8"
+                                                        },
+                                                        {
+                                                            "label": "Column 9",
+                                                            "value": "9"
+                                                        },
+                                                        {
+                                                            "label": "Column 10",
+                                                            "value": "10"
+                                                        },
+                                                        {
+                                                            "label": "Other",
+                                                            "value": "other",
+                                                            "nested": [
+                                                                {
+                                                                    "name": "other",
+                                                                    "type": "text",
+                                                                    "label": "Column Number",
+                                                                    "mappable": false,
+                                                                    "required": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "mappable": false,
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "required": true
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Column"
+                        },
+                        "type": "array",
+                        "label": "New columns"
+                    },
+                    {
+                        "name": "delimiterCharacter",
+                        "type": "text",
+                        "label": "Delimiter Character",
+                        "required": true
+                    }
+                ],
+                "restore": {
+                    "expect": {
+                        "delimiter": {
+                            "label": "Other"
+                        },
+                        "chooseSource": {
+                            "label": "Manually map table columns from a CSV file"
+                        },
+                        "dataPoolMapping": {
+                            "label": "Select from the list"
+                        },
+                        "dataPoolSelected": {
+                            "label": "lineage_tomas"
+                        },
+                        "ingestionConnection": {
+                            "label": "\u2795 New Connection"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "celonis3"
+                            },
+                            "label": "Tomas Connection"
+                        }
+                    }
+                },
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:celonis3,celonis4",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ]
+            },
+            "parameters": {
+                "__IMTCONN__": 7283
+            }
+        }
+    ],
+    "name": "write data in data pool",
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "designer": {
+            "orphans": [],
+            "samples": {
+                "2": {
+                    "id": "1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA",
+                    "data": "IMTBuffer(5042, binary, e411334c750efd5744de2631c610c92e7212caa2): 504b0304140008080800700b905b00000...",
+                    "kind": "drive#file",
+                    "name": "test_af.xlsx",
+                    "size": "1024",
+                    "owners": [
+                        {
+                            "me": true,
+                            "kind": "drive#user",
+                            "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIwjk9AK_1_ZAXoPzC1OqXnxzZaeJGVyAV2Yzh3t-b8c5cEww=s64",
+                            "displayName": "Tom\u00e1s Filipe de Paiva e Silva",
+                            "emailAddress": "t.depaivaesilva@celonis.de",
+                            "permissionId": "10062548532749330364"
+                        }
+                    ],
+                    "shared": false,
+                    "spaces": [
+                        "drive"
+                    ],
+                    "parents": [
+                        "0AHs-hpxaGv70Uk9PVA"
+                    ],
+                    "starred": false,
+                    "trashed": false,
+                    "version": "8",
+                    "filesize": 5042,
+                    "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet",
+                    "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "ownedByMe": true,
+                    "viewedByMe": true,
+                    "createdTime": "2025-12-16T09:18:12.651Z",
+                    "exportLinks": {
+                        "text/csv": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "application/pdf": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "application/zip": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "text/tab-separated-values": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "application/vnd.oasis.opendocument.spreadsheet": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "application/x-vnd.oasis.opendocument.spreadsheet": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo...",
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "https://docs.google.com/spreadsheets/export?id=1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA&exportFo..."
+                    },
+                    "permissions": [
+                        {
+                            "id": "10062548532749330364",
+                            "kind": "drive#permission",
+                            "role": "owner",
+                            "type": "user",
+                            "deleted": false,
+                            "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIwjk9AK_1_ZAXoPzC1OqXnxzZaeJGVyAV2Yzh3t-b8c5cEww=s64",
+                            "displayName": "Tom\u00e1s Filipe de Paiva e Silva",
+                            "emailAddress": "t.depaivaesilva@celonis.de",
+                            "pendingOwner": false,
+                            "permissionDetails": [
+                                {
+                                    "role": "writer",
+                                    "inherited": true,
+                                    "permissionType": "file"
+                                }
+                            ]
+                        }
+                    ],
+                    "webViewLink": "https://docs.google.com/spreadsheets/d/1UFOZ2o1zX7w2Ba7tFhDrVfVHgwFfccB1-GCsqBffuRA/edit?usp=drivesd...",
+                    "capabilities": {
+                        "canCopy": true,
+                        "canEdit": true,
+                        "canShare": true,
+                        "canTrash": true,
+                        "canDelete": true,
+                        "canRename": true,
+                        "canComment": true,
+                        "canUntrash": true,
+                        "canDownload": true,
+                        "canReadLabels": true,
+                        "canAddChildren": false,
+                        "canListChildren": false,
+                        "canModifyLabels": true,
+                        "canModifyContent": true,
+                        "canReadRevisions": true,
+                        "canRemoveChildren": false,
+                        "canAcceptOwnership": false,
+                        "canAddMyDriveParent": false,
+                        "canMoveItemOutOfDrive": true,
+                        "canMoveItemWithinDrive": true,
+                        "canRemoveMyDriveParent": true,
+                        "canMoveItemIntoTeamDrive": true,
+                        "canMoveChildrenWithinDrive": false,
+                        "canModifyContentRestriction": true,
+                        "canRemoveContentRestriction": false,
+                        "canEnableInheritedPermissions": true,
+                        "canChangeSecurityUpdateEnabled": false,
+                        "canChangeViewersCanCopyContent": true,
+                        "canDisableInheritedPermissions": false,
+                        "canChangeItemDownloadRestriction": true,
+                        "canModifyOwnerContentRestriction": true,
+                        "canModifyEditorContentRestriction": true,
+                        "canChangeCopyRequiresWriterPermission": true
+                    },
+                    "hasThumbnail": true,
+                    "modifiedByMe": true,
+                    "modifiedTime": "2025-12-16T09:18:15.755Z",
+                    "permissionIds": [
+                        "10062548532749330364"
+                    ],
+                    "thumbnailLink": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPlBTVfI3QB8-cb34SXN6cmmHgku2mUYMHwuw8ptD5NtgFr...",
+                    "quotaBytesUsed": "1024",
+                    "viewedByMeTime": "2025-12-16T09:18:16.502Z",
+                    "isAppAuthorized": false,
+                    "writersCanShare": true,
+                    "modifiedByMeTime": "2025-12-16T09:18:15.755Z",
+                    "thumbnailVersion": "1",
+                    "explicitlyTrashed": false,
+                    "lastModifyingUser": {
+                        "me": true,
+                        "kind": "drive#user",
+                        "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocIwjk9AK_1_ZAXoPzC1OqXnxzZaeJGVyAV2Yzh3t-b8c5cEww=s64",
+                        "displayName": "Tom\u00e1s Filipe de Paiva e Silva",
+                        "emailAddress": "t.depaivaesilva@celonis.de",
+                        "permissionId": "10062548532749330364"
+                    },
+                    "linkShareMetadata": {
+                        "securityUpdateEnabled": true,
+                        "securityUpdateEligible": false
+                    },
+                    "downloadRestrictions": {
+                        "itemDownloadRestriction": {
+                            "restrictedForReaders": false,
+                            "restrictedForWriters": false
+                        },
+                        "effectiveDownloadRestrictionWithContext": {
+                            "restrictedForReaders": false,
+                            "restrictedForWriters": false
+                        }
+                    },
+                    "viewersCanCopyContent": true,
+                    "copyRequiresWriterPermission": false,
+                    "inheritedPermissionsDisabled": false
+                }
+            }
+        },
+        "scenario": {
+            "dlq": false,
+            "slots": null,
+            "dataloss": false,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "roundtrips": 1,
+            "sequential": false,
+            "confidential": false,
+            "autoCommitTriggerLast": true
+        }
+    }
+}
